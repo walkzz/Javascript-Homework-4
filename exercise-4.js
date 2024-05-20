@@ -497,6 +497,18 @@ function oldestElephant() {
     }
     return null; // if no elephants are found
 }
+// v
+function penguinsFind(){
+    for (let i = 0; i < zooAnimals.length; i++){
+        if(zooAnimals[i].name === "penguins"){
+            for (let j = 0; j < zooAnimals[i].residents.length; j++){
+                if (zooAnimals[i].residents[j].age < 10 && zooAnimals[i].residents[j].sex === "female"){
+                    console.log(zooAnimals[i].residents[j].name);
+                }
+            }
+        }
+    }
+}
 
 // calling functions
 popularityFind();
@@ -507,3 +519,4 @@ if(oldest){ // if true
 else{
     console.log("No elephants found.");
 }
+penguinsFind();
