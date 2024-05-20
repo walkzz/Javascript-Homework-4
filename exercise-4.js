@@ -476,7 +476,7 @@ let zooAnimals = [
 function popularityFind() {
     for (let i = 0; i < zooAnimals.length; i++) {
         if (zooAnimals[i].popularity > 4) {
-            console.log(zooAnimals[i].name);
+            console.log("Popularity higher than 4: ", zooAnimals[i].name);
         }
     }
 }
@@ -503,7 +503,7 @@ function penguinsFind() {
         if (zooAnimals[i].name === "penguins") {
             for (let j = 0; j < zooAnimals[i].residents.length; j++) {
                 if (zooAnimals[i].residents[j].age < 10 && zooAnimals[i].residents[j].sex === "female") {
-                    console.log(zooAnimals[i].residents[j].name);
+                    console.log("Penguin younger than 10 and is a female: ", zooAnimals[i].residents[j].name);
                 }
             }
         }
@@ -528,6 +528,34 @@ function longestAnimalName() {
     console.log(`Longest animal name: ${longestName}`);
     console.log(`Sum of all ages: ${ageSum}`);
 }
+//d
+function residentsNames() {
+    let leastResidents = zooAnimals[0];
+    let mostResidents = zooAnimals[0];
+    for (let i = 1; i < zooAnimals.length; i++) {
+        if (zooAnimals[i].residents.length < leastResidents.residents.length) {
+            leastResidents = zooAnimals[i];
+        }
+
+        if (zooAnimals[i].residents.length > mostInhabitants.residents.length) {
+            mostResidents = zooAnimals[i];
+        }
+    }
+
+    let allResidents = []; // empty array to store the animals
+
+    zooAnimals.forEach(animalGroup => {
+        animalGroup.residents.forEach(resident => {
+            allResidents.push(resident.name);
+        });
+    });
+
+    return {
+        leastResidentsGroup: leastResidents,
+        mostResidentsGroup: mostResidents,
+        allResidentsNames: allResidents
+    };
+}
 
 // calling functions
 popularityFind();
@@ -540,3 +568,7 @@ else {
 }
 penguinsFind();
 longestAnimalName();
+const result = inhabitantsNames();
+console.log("Animal group with the least inhabitants:", result.leastInhabitantsGroup.name);
+console.log("Animal group with the most inhabitants:", result.mostInhabitantsGroup.name);
+console.log("All inhabitants names:", result.allInhabitantsNames);
