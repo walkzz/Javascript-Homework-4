@@ -9,25 +9,12 @@
 // F: 0-59
 // Да се искористи тернарниот оператор(ternary operator) во функцијата.
 
-function checkGrade(num){
-    if(num > 100 || num < 0){
-        console.log("Invalid number entered");
-    }
-    else if(num <= 100 && num >= 90){
-        console.log(`Grade: A, points: ${num}`);
-    }
-    else if(num <= 89 && num >= 80){
-        console.log(`Grade: B, points: ${num}`);
-    }
-    else if(num <= 79 && num >= 70){
-        console.log(`Grade: C, points: ${num}`);
-    }
-    else if(num <= 69 && num >= 60){
-        console.log(`Grade: D, points: ${num}`);
-    }
-    else if(num <= 59 && num >= 0){
-        console.log(`Grade: F, points: ${num}`);
-    }
+function checkGrade(grade) {
+    return (grade >= 90 && grade <= 100) ? 'A' :
+           (grade >= 80 && grade <= 89) ? 'B' :
+           (grade >= 70 && grade <= 79) ? 'C' :
+           (grade >= 60 && grade <= 69) ? 'D' :
+           'F';
 }
 let generateNumber = Math.floor(Math.random() * 100 + 1);
-checkGrade(generateNumber);
+console.log(checkGrade(generateNumber));
