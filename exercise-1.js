@@ -18,3 +18,7 @@ const books = [
 books.forEach((book) => {
     console.log(`Title: ${book.title}, Author: ${book.author}`);
 });
+
+// find the first book published after the year 2000
+const findBook = books.find(book => book.year > 2000);
+console.log(findBook);
