@@ -472,7 +472,7 @@ let zooAnimals = [
         ],
     },
 ]
-
+// a
 function popularityFind() {
     for (let i = 0; i < zooAnimals.length; i++) {
         if (zooAnimals[i].popularity > 4) {
@@ -480,6 +480,7 @@ function popularityFind() {
         }
     }
 }
+// b
 function oldestElephant() {
     for (let i = 0; i < zooAnimals.length; i++) {
         if (zooAnimals[i].name === "elephants") { // check if the animal name is elephants
@@ -496,6 +497,8 @@ function oldestElephant() {
     }
     return null; // if no elephants are found
 }
+
+// calling functions
 popularityFind();
 const oldest = oldestElephant();
 if(oldest){ // if true
