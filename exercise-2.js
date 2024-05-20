@@ -76,3 +76,5 @@ const additionalInfo = {
         major: "Programming"
     }
 }
+const spreadObject = {...person, ...additionalInfo};
+console.log(spreadObject);
