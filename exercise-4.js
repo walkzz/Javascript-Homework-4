@@ -498,25 +498,45 @@ function oldestElephant() {
     return null; // if no elephants are found
 }
 // v
-function penguinsFind(){
-    for (let i = 0; i < zooAnimals.length; i++){
-        if(zooAnimals[i].name === "penguins"){
-            for (let j = 0; j < zooAnimals[i].residents.length; j++){
-                if (zooAnimals[i].residents[j].age < 10 && zooAnimals[i].residents[j].sex === "female"){
+function penguinsFind() {
+    for (let i = 0; i < zooAnimals.length; i++) {
+        if (zooAnimals[i].name === "penguins") {
+            for (let j = 0; j < zooAnimals[i].residents.length; j++) {
+                if (zooAnimals[i].residents[j].age < 10 && zooAnimals[i].residents[j].sex === "female") {
                     console.log(zooAnimals[i].residents[j].name);
                 }
             }
         }
     }
 }
+//g
+function longestAnimalName() {
+    let longestName = "";
+    let longestNameGroup = null;
+    for (let i = 0; i < zooAnimals.length; i++) {
+        if (zooAnimals[i].name.length > longestName.length) {
+            longestName = zooAnimals[i].name;
+            longestNameGroup = zooAnimals[i];
+        }
+    }
+    let ageSum = 0;
+    if (longestNameGroup) { // if true
+        for (let j = 0; j < longestNameGroup.residents.length; j++) {
+            ageSum += longestNameGroup.residents[j].age;
+        }
+    }
+    console.log(`Longest animal name: ${longestName}`);
+    console.log(`Sum of all ages: ${ageSum}`);
+}
 
 // calling functions
 popularityFind();
 const oldest = oldestElephant();
-if(oldest){ // if true
+if (oldest) { // if true
     console.log(`Oldest elephant: ${oldest.name}, age: ${oldest.age}`);
 }
-else{
+else {
     console.log("No elephants found.");
 }
 penguinsFind();
+longestAnimalName();
