@@ -56,7 +56,7 @@
 // work address (вториот елемент од addresses низата) во променливи: workStreet, workCity, workState и workZip.
 // На крај, да се испечатат вредностите на променливите во конзола.
 
-person = {
+const person = {
     firstName: "John",
     lastName: "Doe",
     age: 30,
@@ -67,4 +67,12 @@ person = {
         postalCode: "10001",
     },
     hobbies: ["Reading", "Traveling", "Cooking"],
+}
+const additionalInfo = {
+    email: "fakemail@hotmail.com",
+    phone: "+91638823567",
+    education: {
+        degree: "Computer Science",
+        major: "Programming"
+    }
 }
