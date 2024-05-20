@@ -537,7 +537,7 @@ function residentsNames() {
             leastResidents = zooAnimals[i];
         }
 
-        if (zooAnimals[i].residents.length > mostInhabitants.residents.length) {
+        if (zooAnimals[i].residents.length > mostResidents.residents.length) {
             mostResidents = zooAnimals[i];
         }
     }
@@ -568,7 +568,7 @@ else {
 }
 penguinsFind();
 longestAnimalName();
-const result = inhabitantsNames();
-console.log("Animal group with the least inhabitants:", result.leastInhabitantsGroup.name);
-console.log("Animal group with the most inhabitants:", result.mostInhabitantsGroup.name);
-console.log("All inhabitants names:", result.allInhabitantsNames);
+const result = residentsNames();
+console.log("Animal group with the least residents:", result.leastResidentsGroup.name);
+console.log("Animal group with the most residents:", result.mostResidentsGroup.name);
+console.log("All residents names:", result.allResidentsNames);
