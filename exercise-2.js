@@ -76,5 +76,29 @@ const additionalInfo = {
         major: "Programming"
     }
 }
-const spreadObject = {...person, ...additionalInfo};
+const spreadObject = { ...person, ...additionalInfo };
 console.log(spreadObject);
+
+// b
+user = {
+    id: 123,
+    username: "jsmith",
+    fullName: { firstName: "John", lastName: "Smith" },
+    contact: { email: "john@example.com", phone: "555-555-5555" },
+    addresses: [
+        {
+            type: "home",
+            street: "123 Main Street",
+            city: "New York",
+            state: "NY",
+            zip: "10001",
+        },
+        {
+            type: "work",
+            street: "456 Market Street",
+            city: "San Francisco",
+            state: "CA",
+            zip: "94105",
+        },
+    ],
+}
