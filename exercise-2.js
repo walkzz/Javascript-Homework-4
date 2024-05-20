@@ -78,9 +78,9 @@ const additionalInfo = {
 }
 const spreadObject = { ...person, ...additionalInfo };
 console.log(spreadObject);
-
+console.log("-------------------------------");
 // b
-user = {
+const user = {
     id: 123,
     username: "jsmith",
     fullName: { firstName: "John", lastName: "Smith" },
@@ -102,3 +102,24 @@ user = {
         },
     ],
 }
+// destructuring the user object
+const { username } = user;
+const { fullName: { firstName, lastName } } = user;
+const { contact: { email } } = user;
+const { addresses: [
+    { street: homeStreet, city: homeCity, state: homeState, zip: homeZip },
+    { street: workStreet, city: workCity, state: workState, zip: workZip }
+]} = user;
+
+console.log(username);
+console.log(firstName);
+console.log(lastName);
+console.log(email);
+console.log(homeStreet);
+console.log(homeCity);
+console.log(homeState);
+console.log(homeZip);
+console.log(workStreet);
+console.log(workCity);
+console.log(workState);
+console.log(workZip);
